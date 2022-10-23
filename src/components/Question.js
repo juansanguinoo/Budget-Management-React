@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Error from '../components/Error';
 
-const Question = () => {
+const Question = ({ setBudget, setRemaining, setShowQuestion }) => {
   const [amount, setAmount] = useState(0);
   const [error, setError] = useState(false);
 
@@ -18,6 +19,9 @@ const Question = () => {
     }
 
     setError(false);
+    setBudget(amount);
+    setRemaining(amount);
+    setShowQuestion(false);
   };
 
   return (
@@ -41,6 +45,12 @@ const Question = () => {
       </form>
     </>
   );
+};
+
+Question.propTypes = {
+  setBudget: PropTypes.func.isRequired,
+  setRemaining: PropTypes.func.isRequired,
+  setShowQuestion: PropTypes.func.isRequired,
 };
 
 export default Question;
