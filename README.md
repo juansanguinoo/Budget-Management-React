@@ -1,1 +1,3 @@
-Application to manage the weekly budget
+# Budget Management App
+
+Budget control and weekly portfolio management.
